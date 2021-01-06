@@ -13,3 +13,9 @@ Add the following lines to your project's `netlify.toml` file:
 [[plugins]]
   package = "netlify-plugin-cecil-cache"
 ```
+
+Add the plugin in `package.json`:
+
+```bash
+npm install -D netlify-plugin-cecil-cache
+```
