@@ -1,6 +1,6 @@
 # netlify-plugin-cecil-cache
 
-Persist the Cecil cache between Netlify builds.
+Persist the [Cecil](https://cecil.app) cache between Netlify builds.
 
 ## Usage
 
