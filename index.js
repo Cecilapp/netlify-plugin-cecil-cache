@@ -9,7 +9,7 @@ module.exports = {
   async onPreBuild({ constants, utils }) {
     if (process.cwd() === constants.PUBLISH_DIR) {
       utils.build.failBuild(
-        'Your site\'s publish directory is not set correctly ("${constants.PUBLISH_DIR}".',
+        `Your site’s publish directory is not set correctly (“${constants.PUBLISH_DIR}”).`
       );
     }
 
