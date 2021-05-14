@@ -1,20 +1,19 @@
 const path = require('path');
-const cacheDir = inputs.cacheDir || env.CECIL_CACHE_DIR  || '.cache';
 
-const getCacheDirs = (constants) => [
+const getCacheDirs = (constants, inputs) => [
   constants.PUBLISH_DIR,
-  cacheDir
+  inputs.cacheDir || env.CECIL_CACHE_DIR || '.cache'
 ];
 
 module.exports = {
-  async onPreBuild({constants, utils}) {
+  async onPreBuild({constants, inputs, utils}) {
     if (process.cwd() === constants.PUBLISH_DIR) {
       utils.build.failBuild(
         `Your site’s publish directory is not set correctly (“${constants.PUBLISH_DIR}”).`
       );
     }
 
-    const cacheDirs = getCacheDirs(constants);
+    const cacheDirs = getCacheDirs(constants, inputs);
 
     if (await utils.cache.restore(cacheDirs)) {
       console.log('Found the Cecil cache.');
@@ -22,8 +21,8 @@ module.exports = {
       console.log('Cecil cache not found.');
     }
   },
-  async onPostBuild({constants, utils}) {
-    const cacheDirs = getCacheDirs(constants);
+  async onPostBuild({constants, inputs, utils}) {
+    const cacheDirs = getCacheDirs(constants, inputs);
 
     if (await utils.cache.save(cacheDirs)) {
       console.log('Stored the Cecil cache to speed up next builds.');
