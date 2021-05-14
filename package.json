@@ -13,6 +13,5 @@
     "netlify",
     "netlify-plugin",
     "cecil"
-  ],
-  "dependencies": {}
+  ]
 }
