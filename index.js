@@ -1,12 +1,13 @@
-const path = require('path');
+import path from 'node:path';
 
-const getCacheDirs = (constants) => [
+const getCacheDirs = constants => [
   constants.PUBLISH_DIR,
-  path.normalize(`${constants.PUBLISH_DIR}/../.cache`),
+  path.normalize(`${constants.PUBLISH_DIR}/../.cache`)
 ];
 
-module.exports = {
-  async onPreBuild({ constants, utils }) {
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
+export default {
+  async onPreBuild({constants, utils}) {
     if (process.cwd() === constants.PUBLISH_DIR) {
       utils.build.failBuild(
         'Your site\'s publish directory is not set correctly ("${constants.PUBLISH_DIR}".',
@@ -21,7 +22,7 @@ module.exports = {
       console.log('Cecil cache not found.');
     }
   },
-  async onPostBuild({ constants, utils }) {
+  async onPostBuild({constants, utils}) {
     const cacheDirs = getCacheDirs(constants);
 
     if (await utils.cache.save(cacheDirs)) {
@@ -29,5 +30,5 @@ module.exports = {
     } else {
       console.log('No Cecil build found.');
     }
-  },
+  }
 };

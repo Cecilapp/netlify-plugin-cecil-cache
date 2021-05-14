@@ -14,5 +14,13 @@
     "netlify-plugin",
     "cecil"
   ],
-  "dependencies": {}
+  "scripts": {
+    "test": "xo"
+  },
+  "devDependencies": {
+    "xo": "^v0.40.1"
+  },
+  "xo": {
+    "space": true
+  }
 }
