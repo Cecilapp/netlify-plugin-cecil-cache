@@ -6,7 +6,7 @@ const getCacheDirs = (constants, inputs) => [
 ];
 
 module.exports = {
-  async onPreBuild({constants, utils}) {
+  async onPreBuild({constants, inputs, utils}) {
     if (process.cwd() === constants.PUBLISH_DIR) {
       utils.build.failBuild(
         `Your site’s publish directory is not set correctly (“${constants.PUBLISH_DIR}”).`
@@ -21,7 +21,7 @@ module.exports = {
       console.log('Cecil cache not found.');
     }
   },
-  async onPostBuild({constants, utils}) {
+  async onPostBuild({constants, inputs, utils}) {
     const cacheDirs = getCacheDirs(constants, inputs);
 
     if (await utils.cache.save(cacheDirs)) {
