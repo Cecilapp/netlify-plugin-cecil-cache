@@ -1,6 +1,6 @@
 {
   "name": "netlify-plugin-cecil-cache",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Persist the Cecil cache between Netlify builds.",
   "main": "index.js",
   "repository": "https://github.com/Cecilapp/netlify-plugin-cecil-cache.git",
@@ -13,6 +13,5 @@
     "netlify",
     "netlify-plugin",
     "cecil"
-  ],
-  "dependencies": {}
+  ]
 }

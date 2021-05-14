@@ -19,3 +19,16 @@ Add the plugin in `package.json`:
 ```bash
 npm install -D netlify-plugin-cecil-cache
 ```
+
+### Custom cache directory
+
+```toml
+[build]
+  publish = "_site"
+
+[[plugins]]
+package = "netlify-plugin-cecil-cache"
+
+  [plugins.inputs]
+  cacheDir = ".cache"
+```
