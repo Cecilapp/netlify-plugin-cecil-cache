@@ -2,5 +2,3 @@ name: netlify-plugin-cecil-cache
 inputs:
   - name: cacheDir
     description: Cache directory, relative to publish directory (default is `.cache`).
-    required: false
-    default: '.cache'
