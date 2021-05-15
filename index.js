@@ -2,7 +2,7 @@ const path = require('path');
 
 const getCacheDirs = (constants, inputs) => [
   constants.PUBLISH_DIR,
-  inputs.cacheDir || env.CECIL_CACHE_DIR || '.cache'
+  inputs.cacheDir || process.env.CECIL_CACHE_DIR || '.cache'
 ];
 
 module.exports = {
