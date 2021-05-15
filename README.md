@@ -20,7 +20,7 @@ Add the plugin in `package.json`:
 npm install -D netlify-plugin-cecil-cache
 ```
 
-### Custom cache directory
+### Inputs
 
 ```toml
 [build]
@@ -30,5 +30,6 @@ npm install -D netlify-plugin-cecil-cache
 package = "netlify-plugin-cecil-cache"
 
   [plugins.inputs]
-  cacheDir = ".cache"
+  cacheDir = ".cache" # Custom cache directory. Optional.
+  debug = true # Print full list of cached files in build log. Default = false.
 ```
