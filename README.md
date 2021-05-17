@@ -41,3 +41,9 @@ package = "netlify-plugin-cecil-cache"
   cacheDir = ".cache" # Custom cache directory. Optional.
   debug = true # Print full list of cached files in build log. Default = false.
 ```
+
+## License
+
+_netlify-plugin-cecil-cache_ build Action is a free software distributed under the terms of the MIT license.
+
+© [Arnaud Ligny](https://arnaudligny.fr)
