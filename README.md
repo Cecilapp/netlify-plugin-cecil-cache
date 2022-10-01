@@ -43,6 +43,6 @@ npm install -D netlify-plugin-cecil-cache
 
 ## License
 
-_netlify-plugin-cecil-cache_ build Action is a free software distributed under the terms of the MIT license.
+_netlify-plugin-cecil-cache_ is a free software distributed under the terms of the MIT license.
 
 © [Arnaud Ligny](https://arnaudligny.fr)
