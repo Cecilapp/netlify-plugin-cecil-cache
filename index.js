@@ -1,6 +1,6 @@
 const getCacheDirs = (constants, inputs) => [
   constants.PUBLISH_DIR,
-  inputs.cacheDir || process.env.CECIL_CACHE_DIR || '.cache'
+  inputs.cacheDir || process.env.CECIL_CACHE_DIR
 ];
 
 const printDebug = (items) => {
@@ -23,13 +23,13 @@ module.exports = {
       const cachedFiles = await utils.cache.list();
 
       utils.status.show({
-        title: 'Build cache',
+        title: cachedFiles.length + ' files restored',
         summary: 'Cecil cache restored from previous build. ' + cachedFiles.length + ' files.'
       })
-      console.log('Cecil cache (%s) restored from previous build.', cacheDirs.join(', '));
-      if (inputs.debug) printDebug(cachedFiles);
+      console.log('%s files from Cecil cache (%s) restored from previous build.', cachedFiles.length, cacheDirs.join(', '));
+      if (inputs.debug || process.env.CECIL_DEBUG) printDebug(cachedFiles);
     } else {
-      console.log('Cecil cache not found.');
+      console.log('Cache not found.');
     }
   },
   async onPostBuild({constants, inputs, utils}) {
@@ -39,13 +39,13 @@ module.exports = {
       const cachedFiles = await utils.cache.list();
 
       utils.status.show({
-        title: 'Build cache',
+        title: cachedFiles.length + ' files stored',
         summary: 'Cecil cache stored to speed up next builds. ' + cachedFiles.length + ' files.'
       })
-      console.log('Cecil cache (%s) stored to speed up next builds.', cacheDirs.join(', '));
-      if (inputs.debug) printDebug(cachedFiles);
+      console.log('%s files from Cecil cache (%s) stored to speed up next builds.', cachedFiles.length, cacheDirs.join(', '));
+      if (inputs.debug || process.env.CECIL_DEBUG) printDebug(cachedFiles);
     } else {
-      console.log('No Cecil build found.');
+      console.log('Cecil cache not found.');
     }
   },
 };

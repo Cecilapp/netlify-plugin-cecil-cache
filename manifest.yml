@@ -1,6 +1,7 @@
 name: netlify-plugin-cecil-cache
 inputs:
   - name: cacheDir
-    description: Cache directory, relative to publish directory (default is `.cache`).
+    description: Cache directory, relative to publish directory.
+    default: .cache
   - name: debug
     description: Display list of cached files in build log.
