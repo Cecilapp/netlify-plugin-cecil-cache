@@ -23,9 +23,9 @@ module.exports = {
 
       utils.status.show({
         title: cachedFiles.length + ' files restored',
-        summary: 'Cecil cache restored from previous build. ' + cachedFiles.length + ' files.'
+        summary: 'Cecil’s cache restored from previous build. ' + cachedFiles.length + ' files.'
       })
-      console.log('%s files from Cecil cache (%s) restored from previous build.', cachedFiles.length, cacheDirs.join(', '));
+      console.log('%s files from Cecil’s cache (%s) restored from previous build.', cachedFiles.length, cacheDirs.join(', '));
       if (inputs.debug || process.env.CECIL_DEBUG) printDebug(cachedFiles);
     } else {
       console.log('Cache not found.');
@@ -39,12 +39,12 @@ module.exports = {
 
       utils.status.show({
         title: cachedFiles.length + ' files stored',
-        summary: 'Cecil cache stored to speed up next builds. ' + cachedFiles.length + ' files.'
+        summary: 'Cecil’s cache stored to speed up next builds. ' + cachedFiles.length + ' files.'
       })
-      console.log('%s files from Cecil cache (%s) stored to speed up next builds.', cachedFiles.length, cacheDirs.join(', '));
+      console.log('%s files from Cecil’s cache (%s) stored to speed up next builds.', cachedFiles.length, cacheDirs.join(', '));
       if (inputs.debug || process.env.CECIL_DEBUG) printDebug(cachedFiles);
     } else {
-      console.log('Cecil cache not found.');
+      console.log('Cecil’s cache not found.');
     }
   },
 };
