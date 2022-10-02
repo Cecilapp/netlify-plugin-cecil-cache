@@ -1,5 +1,4 @@
 const getCacheDirs = (constants, inputs) => [
-  constants.PUBLISH_DIR,
   inputs.cacheDir || process.env.CECIL_CACHE_DIR
 ];
 
