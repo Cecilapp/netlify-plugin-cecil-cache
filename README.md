@@ -1,16 +1,22 @@
 # netlify-plugin-cecil-cache
 
-Persist the [Cecil](https://cecil.app) cache between Netlify builds.
+This [Netlify plugins](https://www.netlify.com/products/build/plugins/) persist the [Cecil](https://cecil.app)’s cache between Netlify builds.
 
 ## Usage
 
-There are two ways to install this plugin on your application:
+There are two ways to install this plugin:
 
-### Installing from Netlify UI
+### Installing from [Netlify UI](https://app.netlify.com/teams/cecil-app/plugins?search=cecil)
 
 [One-click install](http://app.netlify.com/plugins/netlify-plugin-cecil-cache/install) to add this to your Cecil site.
 
-### Installing with Netlify configuration file
+### Installing from [npm](https://www.npmjs.com/package/netlify-plugin-cecil-cache)
+
+Add the plugin in `package.json`:
+
+```bash
+npm install -D netlify-plugin-cecil-cache
+```
 
 Add the following lines to your project's `netlify.toml` file:
 
@@ -22,23 +28,14 @@ Add the following lines to your project's `netlify.toml` file:
   package = "netlify-plugin-cecil-cache"
 ```
 
-Add the plugin in `package.json`:
-
-```bash
-npm install -D netlify-plugin-cecil-cache
-```
-
-### Inputs
+### Available inputs
 
 ```toml
-[build]
-  publish = "_site"
-
 [[plugins]]
   package = "netlify-plugin-cecil-cache"
   [plugins.inputs]
-  cacheDir = ".cache" # Custom cache directory. Optional.
-  debug = true # Print full list of cached files in build log. Default = false.
+  cacheDir = ".cache" # Cache directory (`.cache` by default)
+  debug = true        # Print full list of cached files in build log (`false` by default)
 ```
 
 ## License
