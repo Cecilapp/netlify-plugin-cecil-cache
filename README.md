@@ -6,7 +6,7 @@ This [Netlify plugins](https://www.netlify.com/products/build/plugins/) persist 
 
 There are two ways to install this plugin:
 
-### Installing from [Netlify UI](https://app.netlify.com/teams/cecil-app/plugins?search=cecil)
+### Installing from [Netlify UI](https://docs.netlify.com/build-plugins/#ui-installation)
 
 [One-click install](http://app.netlify.com/plugins/netlify-plugin-cecil-cache/install) to add this to your Cecil site.
 
