@@ -19,14 +19,14 @@ module.exports = {
     const cacheDirs = getCacheDirs(constants, inputs);
 
     if (await utils.cache.restore(cacheDirs)) {
-      const cachedFiles = await utils.cache.list();
+      const cachedFolders = await utils.cache.list();
 
       utils.status.show({
-        title: cachedFiles.length + ' files restored',
-        summary: 'Cecil’s cache restored from previous build. ' + cachedFiles.length + ' files.'
+        title: cachedFolders.length + ' cache folders restored',
+        summary: 'Cecil’s cache restored from previous build. ' + cachedFolders.length + ' folders.'
       })
-      console.log('%s files from Cecil’s cache (%s) restored from previous build.', cachedFiles.length, cacheDirs.join(', '));
-      if (inputs.debug || process.env.CECIL_DEBUG) printDebug(cachedFiles);
+      console.log('%s folders from Cecil’s cache (%s) restored from previous build.', cachedFolders.length, cacheDirs.join(', '));
+      if (inputs.debug || process.env.CECIL_DEBUG) printDebug(cachedFolders);
     } else {
       console.log('Cache not found.');
     }
@@ -35,14 +35,14 @@ module.exports = {
     const cacheDirs = getCacheDirs(constants, inputs);
 
     if (await utils.cache.save(cacheDirs)) {
-      const cachedFiles = await utils.cache.list();
+      const cachedFolders = await utils.cache.list();
 
       utils.status.show({
-        title: cachedFiles.length + ' files stored',
-        summary: 'Cecil’s cache stored to speed up next builds. ' + cachedFiles.length + ' files.'
+        title: cachedFolders.length + ' cache folders stored',
+        summary: 'Cecil’s cache stored to speed up next builds. ' + cachedFolders.length + ' folders.'
       })
-      console.log('%s files from Cecil’s cache (%s) stored to speed up next builds.', cachedFiles.length, cacheDirs.join(', '));
-      if (inputs.debug || process.env.CECIL_DEBUG) printDebug(cachedFiles);
+      console.log('%s folders from Cecil’s cache (%s) stored to speed up next builds.', cachedFolders.length, cacheDirs.join(', '));
+      if (inputs.debug || process.env.CECIL_DEBUG) printDebug(cachedFolders);
     } else {
       console.log('Cecil’s cache not found.');
     }

@@ -35,7 +35,7 @@ Add the following lines to your project's `netlify.toml` file:
   package = "netlify-plugin-cecil-cache"
   [plugins.inputs]
   cacheDir = ".cache" # Cache directory (`.cache` by default)
-  debug = true        # Print full list of cached files in build log (`false` by default)
+  debug = true        # Print list of cached folders in build log (`false` by default)
 ```
 
 ## License
